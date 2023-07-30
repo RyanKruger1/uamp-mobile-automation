@@ -9,15 +9,16 @@ import java.nio.file.Files;
 
 public class JsonReader {
 
-    public static JsonObject testData;
-
     public JsonObject readConfigData() throws IOException {
-            File file = new File("data.json");
-            String json = new String(Files.readAllBytes(file.toPath()));
+        File file = new File("data.json");
+        String json = new String(Files.readAllBytes(file.toPath()));
+        return new Gson().fromJson(json, JsonObject.class);
 
-            Gson gson = new Gson();
+    }
 
-            testData = gson.fromJson(json, JsonObject.class);
-        return testData;
+    public JsonObject readDeviceCapabilitiesFile() throws IOException {
+        File file = new File("capabilities.json");
+        String json = new String(Files.readAllBytes(file.toPath()));
+        return new Gson().fromJson(json, JsonObject.class);
     }
 }
