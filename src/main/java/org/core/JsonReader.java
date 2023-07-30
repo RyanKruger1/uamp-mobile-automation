@@ -9,7 +9,7 @@ import java.nio.file.Files;
 
 public class JsonReader {
 
-    public JsonObject readConfigData() throws IOException {
+    public JsonObject readTestData() throws IOException {
         File file = new File("data.json");
         String json = new String(Files.readAllBytes(file.toPath()));
         return new Gson().fromJson(json, JsonObject.class);
