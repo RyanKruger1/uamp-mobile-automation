@@ -54,7 +54,7 @@ On Mac machine you can run:
 A test report can be generated of the last completed test run. Running command:
 `gradlew allureReport` or `./gradlew allureReport` respectively, will create the report.
 
-The report can be opened on browser as a server using: `gradlew allureServe` or `./gradlew allureReport` respectively.
+The report can be opened on browser as a server using: `gradlew allureServe` or `./gradlew allureServe` respectively.
 
 The report will be saved into a generated folder named _test-output_. The
 index.html is the main entry-point to the report which is best viewed in Chrome browser.
