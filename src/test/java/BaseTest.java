@@ -1,13 +1,11 @@
-import jdk.jfr.Description;
-import org.core.TestListener;
+
+import io.qameta.allure.Description;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 @Test
-@Listeners(TestListener.class)
-public class baseTest {
+public class BaseTest {
 
     @BeforeMethod
     public void setup() {
