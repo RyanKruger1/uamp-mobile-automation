@@ -1,0 +1,22 @@
+{
+  "song1": {
+    "name": "Awakening",
+    "genre": "Rock"
+  },
+  "song2": {
+    "name": "Jazz in Paris",
+    "genre": "Jazz & Blues"
+  },
+  "song3": {
+    "name": "The Story Unfolds",
+    "genre": "Cinematic"
+  },
+  "song4": {
+    "name": "Hey Sailor",
+    "genre": "Rock"
+  },
+  "song5": {
+    "name": "The Messenger",
+    "genre": "Jazz & Blues"
+  }
+}
