@@ -1,6 +1,6 @@
 package org.core;
 
-import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.NotFoundException;
@@ -16,10 +16,10 @@ public class BasePage {
 
     @AndroidFindBy(id = "com.example.android.uamp:id/title")
     private static List<WebElement> menuList;
-    protected AppiumDriver driver;
+    protected AndroidDriver driver;
     protected WebDriverWait wait;
 
-    public BasePage(AppiumDriver homePageDriver) {
+    public BasePage(AndroidDriver homePageDriver) {
         this.driver = homePageDriver;
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
         wait = new WebDriverWait(driver, Duration.ofSeconds(30));

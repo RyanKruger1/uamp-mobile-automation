@@ -1,6 +1,6 @@
 package Pages;
 
-import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.core.BasePage;
 import org.openqa.selenium.WebElement;
@@ -14,7 +14,7 @@ public class GenreScreen extends BasePage {
     @AndroidFindBy(xpath = "//android.widget.TextView[@content-desc='Song currently playing']")
     private WebElement songCurrentlyPlaying;
 
-    public GenreScreen(AppiumDriver homePageDriver) {
+    public GenreScreen(AndroidDriver homePageDriver) {
         super(homePageDriver);
     }
 
