@@ -1,7 +1,7 @@
 {
+  "platformName": "Android",
   "deviceOS": "Android",
   "deviceOSVersion": "10",
   "avdName": "Test3",
-  "port": 4723,
-  "platformName": "Android"
+  "port": 4723
 }
