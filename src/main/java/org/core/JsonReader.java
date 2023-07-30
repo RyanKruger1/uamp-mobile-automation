@@ -13,11 +13,10 @@ public class JsonReader {
         File file = new File("data.json");
         String json = new String(Files.readAllBytes(file.toPath()));
         return new Gson().fromJson(json, JsonObject.class);
-
     }
 
-    public JsonObject readDeviceCapabilitiesFile() throws IOException {
-        File file = new File("capabilities.json");
+    public JsonObject readCapabilities() throws IOException {
+        File file = new File("deviceCapabilities.json");
         String json = new String(Files.readAllBytes(file.toPath()));
         return new Gson().fromJson(json, JsonObject.class);
     }
