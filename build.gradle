@@ -23,7 +23,7 @@ dependencies {
     implementation group: 'io.appium', name: 'java-client', version: '8.5.1'
     compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.28'
     implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.10.0'
-
+    annotationProcessor 'org.projectlombok:lombok:1.18.28'
 }
 
 test {

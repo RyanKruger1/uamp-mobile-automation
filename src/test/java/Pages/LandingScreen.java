@@ -1,16 +1,11 @@
 package Pages;
 
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.pagefactory.AndroidFindBy;
+import io.appium.java_client.android.AndroidDriver;
 import org.core.BasePage;
-import org.openqa.selenium.WebElement;
 
 public class LandingScreen extends BasePage {
 
-    @AndroidFindBy(accessibility = "com.example.android.uamp:id/title")
-    private static WebElement toolBar;
-
-    public LandingScreen(AppiumDriver homePageDriver) {
+    public LandingScreen(AndroidDriver homePageDriver) {
         super(homePageDriver);
     }
 

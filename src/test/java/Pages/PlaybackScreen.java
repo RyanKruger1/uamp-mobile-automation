@@ -1,6 +1,6 @@
 package Pages;
 
-import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.core.BasePage;
 import org.openqa.selenium.WebElement;
@@ -20,7 +20,7 @@ public class PlaybackScreen extends BasePage {
     @AndroidFindBy(id = "com.example.android.uamp:id/startText")
     private WebElement startTime;
 
-    public PlaybackScreen(AppiumDriver homePageDriver) {
+    public PlaybackScreen(AndroidDriver homePageDriver) {
         super(homePageDriver);
         wait.until(ExpectedConditions.visibilityOf(songNameElement));
     }
@@ -41,10 +41,6 @@ public class PlaybackScreen extends BasePage {
     }
 
     public boolean isSongPlaying(String songName) {
-        if (songNameElement.getText().equals(songName)) {
-            return true;
-        } else {
-            return false;
-        }
+        return songNameElement.getText().equals(songName);
     }
 }
