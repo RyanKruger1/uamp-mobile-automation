@@ -5,7 +5,6 @@ import org.core.BasePage;
 
 public class GenresMenuScreen extends BasePage {
 
-
     public GenresMenuScreen(AndroidDriver driver) {
         super(driver);
     }
