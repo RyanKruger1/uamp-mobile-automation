@@ -38,11 +38,11 @@ public class MusicPlayerTests extends BaseMobileClient {
         loadTestData("song2");
         landingScreen = new LandingScreen(getDriver());
         genresMenuScreen = landingScreen.navigateToGenresPage();
-        genreScreen = genresMenuScreen.navigateToGenrePlaylist("Jazz & Blues");
-        genreScreen.playSong("Jazz in Paris");
+        genreScreen = genresMenuScreen.navigateToGenrePlaylist(genre);
+        genreScreen.playSong(song);
         playbackScreen = genreScreen.viewPlaybackScreen();
         playbackScreen.previousSong();
-        Assert.assertFalse(playbackScreen.isSongPlaying("Jazz in Paris"));
+        Assert.assertFalse(playbackScreen.isSongPlaying(song));
     }
 
     @Description("As a Mobile App User, I want to view the full screen playback and use next button to navigate songs.")
@@ -51,11 +51,11 @@ public class MusicPlayerTests extends BaseMobileClient {
         loadTestData("song3");
         landingScreen = new LandingScreen(getDriver());
         genresMenuScreen = landingScreen.navigateToGenresPage();
-        genreScreen = genresMenuScreen.navigateToGenrePlaylist("Jazz & Blues");
-        genreScreen.playSong("Jazz in Paris");
+        genreScreen = genresMenuScreen.navigateToGenrePlaylist(genre);
+        genreScreen.playSong(song);
         playbackScreen = genreScreen.viewPlaybackScreen();
         playbackScreen.nextSong();
-        Assert.assertFalse(playbackScreen.isSongPlaying("Jazz in Paris"));
+        Assert.assertFalse(playbackScreen.isSongPlaying(song));
     }
 
     @Description("As a Mobile App User, I want to view the full screen playback and use the controls.")
@@ -64,10 +64,10 @@ public class MusicPlayerTests extends BaseMobileClient {
         loadTestData("song4");
         landingScreen = new LandingScreen(getDriver());
         genresMenuScreen = landingScreen.navigateToGenresPage();
-        genreScreen = genresMenuScreen.navigateToGenrePlaylist("Jazz & Blues");
-        genreScreen.playSong("Jazz in Paris");
+        genreScreen = genresMenuScreen.navigateToGenrePlaylist(genre);
+        genreScreen.playSong(song);
         playbackScreen = genreScreen.viewPlaybackScreen();
-        Assert.assertTrue(playbackScreen.isSongPlaying("Jazz in Paris"));
+        Assert.assertTrue(playbackScreen.isSongPlaying(song));
     }
 
     @Description("As a Mobile App User, I want to play a song and watch the progression of the seekbar over 2 seconds.")
@@ -76,8 +76,8 @@ public class MusicPlayerTests extends BaseMobileClient {
         loadTestData("song5");
         landingScreen = new LandingScreen(getDriver());
         genresMenuScreen = landingScreen.navigateToGenresPage();
-        genreScreen = genresMenuScreen.navigateToGenrePlaylist("Jazz & Blues");
-        genreScreen.playSong("Jazz in Paris");
+        genreScreen = genresMenuScreen.navigateToGenrePlaylist(genre);
+        genreScreen.playSong(song);
         playbackScreen = genreScreen.viewPlaybackScreen();
         Assert.assertFalse(playbackScreen.validateProgressionOfSeekbar());
     }
