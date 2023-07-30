@@ -1,16 +1,10 @@
-
 import io.qameta.allure.Description;
+import org.core.BaseMobileClient;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 @Test
-public class BaseTest {
-
-    @BeforeMethod
-    public void setup() {
-        System.out.println("This is a before test");
-    }
+public class BaseTest extends BaseMobileClient {
 
     @Description("This is a test to test it all")
     public void runBasic() {
@@ -18,7 +12,7 @@ public class BaseTest {
     }
 
     @AfterMethod
-    public void burnDown(){
+    public void burnDown() {
         System.out.println("This is an after test");
     }
 }
