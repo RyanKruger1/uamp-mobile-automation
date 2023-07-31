@@ -33,11 +33,12 @@ public class PlaybackScreen extends BasePage {
         prev.click();
     }
 
-    public boolean validateProgressionOfSeekbar() throws InterruptedException {
+    public boolean validateProgressionOfSeekbar() {
         String seekBarStartText = startTime.getText();
-        Thread.sleep(2000);
-        String seekBarStopText = startTime.getText();
-        return seekBarStopText.equals(seekBarStartText);
+        return wait.until(
+                ExpectedConditions.not(
+                        ExpectedConditions.textToBePresentInElement(
+                                startTime, seekBarStartText)));
     }
 
     public boolean isSongPlaying(String songName) {

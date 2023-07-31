@@ -23,7 +23,7 @@ public class MusicPlayerTests extends BaseMobileClient {
 
     @Description("As a Mobile App User, I want to view the playback controls when I play a song.")
     @Test
-    public void playbackWindowTest() throws Exception {
+    public void playbackWindowTest() {
         loadTestData("song1");
         landingScreen = new LandingScreen(getDriver());
         genresMenuScreen = landingScreen.navigateToGenresPage();
@@ -34,7 +34,7 @@ public class MusicPlayerTests extends BaseMobileClient {
 
     @Description("As a Mobile App User, I want to view the full screen playback and use back button to navigate songs.")
     @Test
-    public void playbackScreenPrevControlTest() throws Exception {
+    public void playbackScreenPrevControlTest() {
         loadTestData("song2");
         landingScreen = new LandingScreen(getDriver());
         genresMenuScreen = landingScreen.navigateToGenresPage();
@@ -47,7 +47,7 @@ public class MusicPlayerTests extends BaseMobileClient {
 
     @Description("As a Mobile App User, I want to view the full screen playback and use next button to navigate songs.")
     @Test
-    public void playbackScreenNextControlTest() throws Exception {
+    public void playbackScreenNextControlTest() {
         loadTestData("song3");
         landingScreen = new LandingScreen(getDriver());
         genresMenuScreen = landingScreen.navigateToGenresPage();
@@ -60,7 +60,7 @@ public class MusicPlayerTests extends BaseMobileClient {
 
     @Description("As a Mobile App User, I want to view the full screen playback and use the controls.")
     @Test
-    public void playScreenTest() throws Exception {
+    public void playbackScreenTest() {
         loadTestData("song4");
         landingScreen = new LandingScreen(getDriver());
         genresMenuScreen = landingScreen.navigateToGenresPage();
@@ -72,13 +72,13 @@ public class MusicPlayerTests extends BaseMobileClient {
 
     @Description("As a Mobile App User, I want to play a song and watch the progression of the seekbar over 2 seconds.")
     @Test
-    public void playScreenSeekBarProgressionTest() throws Exception {
+    public void playScreenSeekBarProgressionTest() {
         loadTestData("song5");
         landingScreen = new LandingScreen(getDriver());
         genresMenuScreen = landingScreen.navigateToGenresPage();
         genreScreen = genresMenuScreen.navigateToGenrePlaylist(genre);
         genreScreen.playSong(song);
         playbackScreen = genreScreen.viewPlaybackScreen();
-        Assert.assertFalse(playbackScreen.validateProgressionOfSeekbar());
+        Assert.assertTrue(playbackScreen.validateProgressionOfSeekbar());
     }
 }
