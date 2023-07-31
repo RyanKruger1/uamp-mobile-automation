@@ -28,7 +28,6 @@ public class BaseMobileClient {
         } else {
             driver.resetApp();
         }
-
         testData = reader.readTestData();
     }
 
@@ -38,18 +37,18 @@ public class BaseMobileClient {
     }
 
     protected static AndroidDriver connectToAppiumServer() throws IOException {
-        File apkFile = new File("uamp-debug.apk");
-        String apk = apkFile.getAbsoluteFile().toString();
-
         JsonObject emulatorInfo;
         emulatorInfo = reader.readCapabilities();
         int port = emulatorInfo.get("port").getAsInt();
 
         DesiredCapabilities caps = new DesiredCapabilities();
+        caps.setCapability(APP,
+                new File("uamp-debug.apk").
+                        getAbsoluteFile().
+                        toString());
         caps.setCapability(PLATFORM_NAME, emulatorInfo.get("deviceOS").getAsString());
         caps.setCapability(PLATFORM_VERSION, emulatorInfo.get("deviceOSVersion").getAsString());
         caps.setCapability(DEVICE_NAME, emulatorInfo.get("avdName").getAsString());
-        caps.setCapability(APP, apk);
         caps.setCapability(AUTOMATION_NAME, "UiAutomator2");
         caps.setCapability("avd", emulatorInfo.get("avdName").getAsString());
         caps.setCapability("resetKeyboard", true);

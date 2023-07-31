@@ -11,6 +11,8 @@ This repo consists of a Java framework using Appium.
 - GK-VPN (Sorry non gk peeps)
 - Android Emulator
 
+Since Appium version 1.22.0 is being utilized, this will require the user to set their JAVA_HOME and ANDROID_HOME environment variables.
+
 ## System under test
 
 The SUT is _UAMP_.
@@ -46,7 +48,7 @@ On a Windows operating system, navigate to the root of the project in your file 
 Then run :
 `gradlew clean test`
 
-On Mac machine you can run:
+On Mac machine navigate to the repository via terminal. Run `chmod +x gradlew`, this will allow the gradlew file to become executable. To run the solution run command:
 `./gradlew clean test`
 
 ### Reporting
